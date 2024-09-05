@@ -3,8 +3,10 @@ from pathlib import Path
 from csv import reader
 import brightway2 as bw
 import numpy as np
+from typing import List, tuple
 
-def db_paths(base_path, scenarios, years):
+
+def db_paths(base_path: str, scenarios: List[str], years:List[str]) -> List[Path]:
     """
     Create a list of Path objects for given scenarios and years.
 
@@ -25,7 +27,7 @@ def db_paths(base_path, scenarios, years):
     return paths
 
 
-def matrices(path):
+def matrices(path: Path) -> tuple[sparse.csr_matrix, sparse.csr_matrix, dict, dict, dict, dict]:
     """
     Creates sparse matrices `A` and `B` from CSV files and updates the indices dictionaries.
 
@@ -33,10 +35,6 @@ def matrices(path):
     ----------
     path : str or list of str
             The directory path(s) where the CSV files (`A_matrix_index.csv`, `B_matrix_index.csv`, `A_matrix.csv`, and `B_matrix.csv`) are located.
-    A_inds : dict
-        A dictionary to store the indices for the `A_matrix`. The function will populate this dictionary based on the content of the `A_matrix_index.csv` file.
-    B_inds : dict
-        A dictionary to store the indices for the `B_matrix`. The function will populate this dictionary based on the content of the `B_matrix_index.csv` file.
 
     Returns
     -------
@@ -77,7 +75,7 @@ def matrices(path):
     return A, B, A_inds, B_inds, A_inds_rev, B_inds_rev
 
 
-def CF_vector(project, B, B_inds, methods):
+def CF_vector(project: str, B: sparse.csr_matrix, B_inds: sparse.csr_matrix, methods) :
     """
     Generates a list of characterization factor (CF) vectors for Life Cycle Impact Assessment (LCIA) based on the given methods.
 
@@ -136,7 +134,7 @@ def CF_vector(project, B, B_inds, methods):
             raise ValueError(f"Method {method_dict} not found in Brightway2 database.")
         
 
-    def convert_to_dict(method):
+    def convert_to_dict(method) -> dict:
         """
         Convert method input to a dictionary format.
 

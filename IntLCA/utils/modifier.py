@@ -2,7 +2,7 @@ from typing import List
 import copy
 from scipy import sparse
 
-def  copy_technosphere(A: sparse.csr_matrix):
+def  copy_technosphere(A: sparse.csr_matrix) -> sparse.csr_matrix:
     """
     Copy the technosphere matrix to make changes.
     """
@@ -12,7 +12,7 @@ def  copy_technosphere(A: sparse.csr_matrix):
     return A_
 
 
-def remove_technosphere(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_modify: List[int]):
+def remove_technosphere(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_modify: List[int]) -> sparse.csr_matrix:
     """
     Prepare the technosphere matrix for new activities by removing specified elements.
 
@@ -30,7 +30,7 @@ def remove_technosphere(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_
     return A_
 
 
-def add_technosphere(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_modify: List[int], act_to_add: List[int]):
+def add_technosphere(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_modify: List[int], act_to_add: List[int]) -> sparse.csr_matrix:
     """
     Add to the technosphere matrix new connections between existing and new activities.
 
@@ -50,7 +50,7 @@ def add_technosphere(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_mod
 
 
 def add_technosphere_loc(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to_modify: List[int],
-                     act_to_add: List[int], A_inds_rev):
+                     act_to_add: List[int], A_inds_rev:  dict) -> sparse.csr_matrix:
     """
     Add to the technosphere matrix new connections between existing and new activities.
 
@@ -65,7 +65,7 @@ def add_technosphere_loc(A_: sparse.csr_matrix, exc_to_remove: List[int], act_to
     for add in act_to_add:
         for modify in act_to_modify:
             if A_inds_rev[add][3] == A_inds_rev[add][3]:
-                amount = A_[exc_to_remove[0], act_to_modify]
+                amount = A_[exc_to_remove[0], modify]
                 A_[add, modify] = amount
 
     return A_
