@@ -64,7 +64,6 @@ DOI: https://doi.org/10.1016/j.spc.2024.08.016
 📍 The [Data](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Data) folder includes:
 
 - The [LCIA](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Data/LCIA) folder→ Three excel files that are used for creating or updating the LCIA method.
-- The [Folded dbs](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Data) folder → The databases folded
 
 📍 The [Notebooks](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Notebooks) folder includes:
 - [Setting up](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Notebooks/Setting%20up) folder → Notebooks to create the databases
@@ -73,7 +72,7 @@ DOI: https://doi.org/10.1016/j.spc.2024.08.016
 - [Plotting](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Notebooks/Plotting) folder → Notebooks to plot the LCA impacts
 - [Fetcing info](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Notebooks/Fetching%20info) folder → Notebooks to fetch information from the environmental databases
 
-📍 The [IntLCA](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Notebooks) folder includes: --> Package created to perform integrated LCA. The file includes utils folder with all the modules required.
+📍 The [IntLCA](https://github.com/MargotCha/Integrated-LCA-master/tree/main/Notebooks) folder  → Includes a  package created to perform integrated LCA. The file includes utils folder with all the modules required.
 
 
 ---
@@ -88,8 +87,7 @@ Using Anaconda, build the environment using `environment.yml`:
 ```bash
 conda env create -f environment.yml
 ```
-
-Once in the new environment, run the notebooks following the order described above. Further details are provided in the corresponding notebooks.
+Details on how to use  the package are provided in the corresponding notebooks.
 Reach out if you encounter issues!
 
 
