@@ -7,6 +7,15 @@ class ActivityFilter:
         self.filtered_indices = set(A_inds.values())
 
     def starts(self, prefixes: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities that start with the specified prefixes.
+        Args:
+            prefices (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
+
         if isinstance(prefixes, str):
             prefixes = [prefixes]
         self.filtered_indices &= {
@@ -16,6 +25,15 @@ class ActivityFilter:
         return self
 
     def reference_product(self, substrings: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities with specified reference products.
+        Args:
+            prefices (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
+
         if isinstance(substrings, str):
             substrings = [substrings]
         self.filtered_indices &= {
@@ -25,6 +43,15 @@ class ActivityFilter:
         return self
 
     def includes(self, substrings: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities with specified substrings.
+        Args:
+            substrings (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
+
         if isinstance(substrings, str):
             substrings = [substrings]
         self.filtered_indices &= {
@@ -34,6 +61,14 @@ class ActivityFilter:
         return self
 
     def includes_all(self, substrings: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities that should include all the specified substrings.
+        Args:
+            substrings (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
         if isinstance(substrings, str):
             substrings = [substrings]
         self.filtered_indices &= {
@@ -43,6 +78,14 @@ class ActivityFilter:
         return self
 
     def excludes(self, substrings: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities that exclude the specified substrings.
+        Args:
+            substrings (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
         if isinstance(substrings, str):
             substrings = [substrings]
         self.filtered_indices -= {
@@ -52,6 +95,14 @@ class ActivityFilter:
         return self
 
     def location(self, substrings: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities that include the specified locations.
+        Args:
+            substrings (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
         if isinstance(substrings, str):
             substrings = [substrings]
         self.filtered_indices &= {
@@ -61,6 +112,14 @@ class ActivityFilter:
         return self
 
     def excluding_locations(self, substrings: Union[str, List[str]]) -> 'ActivityFilter':
+        """
+        Fetches the indices of activities that exclude the specified locations.
+        Args:
+            substrings (Union [str, List[str]): Prefixes to filter the activities.
+
+        Returns:
+            filtered_indices (dict): Filtered indices of activities.
+        """
         if isinstance(substrings, str):
             substrings = [substrings]
         self.filtered_indices -= {

@@ -41,7 +41,7 @@ def simple_calculation(act_to_run: int, A_inds_rev: Dict[int, str], CF_dict: Dic
     return df, contribution, s
 
 
-def breakdown_calculation(act_to_run: int, A_inds_rev: Dict[int, str], methods, CF_dict: Dict[str, np.ndarray], FU: int, A_: sparse.csr_matrix, B: sparse.csr_matrix, results, act_tech) -> List[pd.DataFrame]:
+def breakdown_calculation(act_to_run: int, A_inds_rev: Dict[int, str], methods: List[str], CF_dict: Dict[str, np.ndarray], FU: int, A_: sparse.csr_matrix, B: sparse.csr_matrix, results, act_tech) -> List[pd.DataFrame]:
     """
     Run simple calculation by solving the linear system and computing the result.
 
@@ -49,7 +49,7 @@ def breakdown_calculation(act_to_run: int, A_inds_rev: Dict[int, str], methods, 
         act_to_run (List[int]): List of indices representing the truck fleet.
         A_inds_rev (Dict[int, str]): Dictionary mapping indices to activity names.
         methods (List[str]): method to use for calculating the results.
-        CF (List[int]): List of characterization factors.
+        CF (Dict[str, np.ndarray]: List of characterization factors.
         FU (int): Functional unit.
         A_ (np.ndarray): The modified technosphere matrix.
         B (np.ndarray): The matrix used for computing the result.
@@ -109,7 +109,7 @@ def multi_calculation(act_to_run: List[int], A_inds_rev, CF_dict: Dict[str, np.n
 
     Args:
         act_to_run (List[int]): List of activity indices to run.
-        A_inds_rev: Reversed indices for activities.
+        A_inds_rev (dict): Reversed indices for activities.
         CF_dict: Dictionary of characterization factors.
         FU: Functional unit.
         A_: Modified technosphere matrix.
