@@ -76,7 +76,16 @@ DOI: https://doi.org/10.1016/j.spc.2024.08.016
 
 
 ---
-## Usage
+## 🔧 Installation
+
+To install the IntLCA package use pypi:
+
+```sh
+pip install IntLCA-dev
+```
+
+---
+## 🚀 Usage
 
 To ensure the replication of the results presented in the article, it is highly recommended starting a new environment. 
 
