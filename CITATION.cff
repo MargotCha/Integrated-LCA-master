@@ -1,0 +1,19 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Charalambous M. A. (2024). Integrating emerging technologies deployed at scale within prospective life cycle assessments. Sustainable Production and Consumption.
+message: Please cite this dataset using these metadata.
+type: dataset
+authors:
+  - given-names: Margarita
+    family-names: Charalambous
+    email: margarita.charalambous@chem.ethz.ch
+    affiliation: >-
+        Department of Chemistry and Bioscience, ETH Zurich, Vladimir-Prelog-Weg 1, 8093 Zurich, Switzerland
+repository-code: >-
+  https://github.com/MargotCha/Integrated-LCA-master.git
+abstract: >-
+    Climate policies will strongly affect future supply chains in ways that can be predicted using integrated assessment models (IAMs). The outcomes of IAMs are now being used to conduct prospective life cycle assessments (pLCA) where the background data reflects expected future changes in the economy. However, the technological representation of emerging technologies is often limited in IAMs, which cover a reduced number of routes, thus offering limited insights into their role in future scenarios. This study addresses this gap by integrating emerging technologies omitted in IAMs into future markets, providing a more robust foundation for pLCAs. Diesel, widely used in transportation, heating, and power systems, has established itself as an integral part of the world's infrastructure. Hence, to illustrate our approach, here we analyze the future environmental impacts of heavy-duty trucks fueled with synthetic Fischer-Tropsch e-diesel, incorporating our technology in the diesel market of the background system, through an integrated LCA approach. The standard non-integrated LCA would analyze these technologies in the foreground, assuming that the background is given. In contrast, our integrated LCA, which is particularly suited for cases where technologies in the foreground are deployed at scale, makes both systems consistent with each other. Our findings reveal mismatches in climate impacts depending on the climate pathway and technology of up to 35 % between the integrated and non-integrated approaches, which increase over time, particularly from 2020 to 2050, and are more pronounced when assessing highly carbon-negative or carbon-positive technologies. Overall, we stress the importance of having consistent foreground and background systems for performing more meaningful and accurate LCAs. Moreover, we provide detailed guidelines on implementing such integrated analysis in current software packages, aiming to enhance the reliability of pLCAs for emerging technologies.
+    ```
